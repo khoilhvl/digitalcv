@@ -1,0 +1,63 @@
+/* Màng hình cỡ nhỏ */
+@media screen and (max-width: 767px) {
+  /* Row 1 */
+  .info-name div:nth-child(2) {
+    font-size: 1rem;
+  }
+  .info-name > div {
+    font-size: 1.5rem;
+  }
+  .row2-navi {
+    font-size: 1rem;
+  }
+  .row3-target > p {
+    text-indent: 10px;
+    width: 95%;
+  }
+  .row3 {
+    margin-top: 3.5%;
+  }
+  .row3 > div {
+    margin: 3.5%;
+    font-size: 14px;
+  }
+  .cv-page {
+    margin: 0 2.5%;
+  }
+
+  .container-lg .row4 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .row5-certificate img {
+    width: 95%;
+  }
+  .row5-certificate .certificate-items-1 {
+    margin: 3.5%;
+  }
+  .row5-certificate span {
+    margin-top: 0%;
+  }
+  .tablet > div {
+    width: 97%;
+  }
+  .certificate-items:last-child > div {
+    flex-direction: column;
+  }
+  .project-items:not(.project-items:last-child) {
+    margin-bottom: 3.5%;
+  }
+  .request-form {
+    width: 90%;
+  }
+  #viewmore {
+    display: none;
+  }
+  .container-lg .row4-hidden {
+    position: relative;
+    left: 0%;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,62 @@
+/* Màng hình máy tính bảng phổ thông */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  /* .container-lg {
+    display: none;
+  } */
+  .container-lg .row4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, auto);
+  }
+  .row4-experience {
+    grid-area: 1/1/5/2;
+  }
+  .row4-skill {
+    grid-area: 1/2/4/3;
+  }
+  .row4-hobby {
+    grid-area: 5/1/7/2;
+  }
+  .row4-lang {
+    grid-area: 7/1/8/2;
+  }
+  .row4-education {
+    grid-area: 4/2/7/3;
+  }
+  .row4-activity {
+    grid-area: 7/2/8/3;
+  }
+  .row4 .hidden {
+    display: block;
+    position: relative;
+  }
+  #viewmore,
+  .row4-hidden {
+    display: none;
+  }
+
+  .row4-experiencetable td:first-child > div,
+  .education td:first-child > div,
+  .row4-activity-table td:first-child > div {
+    width: 100px;
+  }
+  .tablet {
+    display: flex;
+  }
+  .cv-page {
+    min-height: 350vh;
+  }
+  .flex > div:not(div:last-child) {
+    margin-bottom: 3.5%;
+  }
+  .project-items {
+    width: 32%;
+  }
+  .request-form {
+    width: 45%;
+  }
+  .container-lg .row4-hidden {
+    box-shadow: none;
+    margin: 0;
+  }
+}
