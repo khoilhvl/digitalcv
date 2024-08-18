@@ -18,7 +18,6 @@
     margin-top: 3.5%;
   }
   .row3 > div {
-    margin: 3.5%;
     font-size: 14px;
   }
   .cv-page {
@@ -56,8 +55,7 @@
     display: none;
   }
   .container-lg .row4-hidden {
-    position: relative;
-    left: 0%;
-    box-shadow: none;
+    position: absolute;
+    left: 5%;
   }
 }

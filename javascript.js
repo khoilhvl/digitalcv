@@ -76,14 +76,22 @@ function removeClassOnSmallScreen(mql) {
       div.addEventListener("click", () => {
         if (viewMoreStatus === true) {
           row4Hidden[index].classList.remove("hidden");
+          row4Hidden[index].classList.add("reveal");
+          row4Hidden[index].classList.remove("hide");
+          btn[index].textContent = `Viewless`;
+          arrow[index].textContent = "arrow_circle_up";
           hoverViewmore[index].classList.add("highlight");
           viewMoreStatus =
             viewMoreStatus === true
               ? (viewMoreStatus = false)
               : (viewMoreStatus = true);
         } else {
-          row4Hidden[index].classList.add("hidden");
+          row4Hidden[index].classList.add("hide");
+          row4Hidden[index].classList.remove("reveal");
+          btn[index].textContent = "Viewmore";
+          arrow[index].textContent = "arrow_circle_down";
           hoverViewmore[index].classList.remove("highlight");
+
           viewMoreStatus =
             viewMoreStatus === true
               ? (viewMoreStatus = false)
@@ -150,6 +158,8 @@ viewMoreLabel.forEach((div, index) => {
   div.addEventListener("click", () => {
     if (viewMoreStatus === true) {
       row4Hidden[index].classList.remove("hidden");
+      row4Hidden[index].classList.add("reveal");
+      row4Hidden[index].classList.remove("hide");
       btn[index].textContent = `Viewless`;
       arrow[index].textContent = "arrow_circle_up";
       hoverViewmore[index].classList.add("highlight");
@@ -158,10 +168,12 @@ viewMoreLabel.forEach((div, index) => {
           ? (viewMoreStatus = false)
           : (viewMoreStatus = true);
     } else {
-      row4Hidden[index].classList.add("hidden");
+      row4Hidden[index].classList.add("hide");
+      row4Hidden[index].classList.remove("reveal");
       btn[index].textContent = "Viewmore";
       arrow[index].textContent = "arrow_circle_down";
       hoverViewmore[index].classList.remove("highlight");
+
       viewMoreStatus =
         viewMoreStatus === true
           ? (viewMoreStatus = false)

@@ -58,5 +58,6 @@
   .container-lg .row4-hidden {
     box-shadow: none;
     margin: 0;
+    top: 0%;
   }
 }
