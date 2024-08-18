@@ -15,7 +15,18 @@ const btnForm = requestForm.querySelector('button[type="submit"]');
 const information = document.querySelector(".infomation");
 const inputForm = document.querySelector("#input-form");
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //Đây là một biểu thức chính quy
+
+// /^          : bắt đầu chuỗi.
+// [^\s@]+    : bất kỳ ký tự nào không phải là khoảng trắng, hoặc ký tự @, xuất hiện một hoặc nhiều lần.
+// @          : ký tự @
+// \.         : Dấu chấm.
+// $/ kết thúc chuỗi.
+// Đoạn code trên có thể hiểu rằng
+//    -/^- (các ký tự ngoại trừ @ và phím cách '') -@- (các ký tự ngoại trừ @ và phím cách '') -.- (các ký tự ngoại trừ @ và phím cách '')-$-
+// Vd:Mở chuỗi   -   "OnePiece                      @              Oda                          .                    Manga"               - Kết chuỗi
+// Vậy format của biểu thức này là OnePiece@Oda.Manga đây là một format hợp lý
 // Hover vào sẽ có thanh Viewmore xuất hiện.
+
 const hoverViewmore = document.querySelectorAll(".hover-viewmore");
 // Đặt biến hoverViewmore là bao gồm tấc cả  (All) Các phần tử có class là hover-viewmore
 const viewMoreLabel = document.querySelectorAll("#viewmore");
@@ -23,11 +34,21 @@ const viewMoreLabel = document.querySelectorAll("#viewmore");
 const row4Hidden = document.querySelectorAll(".row4-hidden");
 const btn = document.querySelectorAll(".btn-hidden");
 const arrow = document.querySelectorAll(".arrow");
-// Khi ấn vào project items sẽ chuyển đến link
+const links = [
+  {
+    url: "https://khoilhvl.github.io/digitalcv/",
+    target: "_blank",
+  },
+  {
+    url: "projectcharter.html",
+    target: "_blank",
+  },
+];
 
-row6ProjectItems.forEach((div) => {
+// Sử dụng forEach để thêm event listener cho mỗi project item
+row6ProjectItems.forEach((div, index) => {
   div.addEventListener("click", function () {
-    window.open("projectcharter.html", "_blank");
+    window.open(links[index].url, links[index].target);
   });
 });
 
@@ -93,17 +114,8 @@ mql.addListener(removeClassOnSmallScreen);
 
 // Nhập email để hiển thị thông tin.
 
-// /^          : bắt đầu chuỗi.
-// [^\s@]+    : bất kỳ ký tự nào không phải là khoảng trắng, hoặc ký tự @, xuất hiện một hoặc nhiều lần.
-// @          : ký tự @
-// \.         : Dấu chấm.
-// $/ kết thúc chuỗi.
-// Đoạn code trên có thể hiểu rằng
-//    -/^- (các ký tự ngoại trừ @ và phím cách '') -@- (các ký tự ngoại trừ @ và phím cách '') -.- (các ký tự ngoại trừ @ và phím cách '')-$-
-// Vd:Mở chuỗi   -   "OnePiece                      @              Oda                          .                    Manga"               - Kết chuỗi
-// Vậy format của biểu thức này là OnePiece@Oda.Manga đây là một format hợp l
-
 btnForm.addEventListener("click", function (event) {
+  // Ngăn chặn tải lại trang khi ấn vào nút Submit.
   event.preventDefault();
   if (
     // .value.trim()==="" đây là cách để lấy giá trị của một input và loại bỏ khoảng trắng ở đầu và cuối chuỗi.
@@ -117,7 +129,6 @@ btnForm.addEventListener("click", function (event) {
   ) {
     alert("Vui lòng nhập đúng định dạng  ví dụ: ...@gmail.com");
   } else {
-    // Ngăn chặn tải lại trang khi ấn vào nút Submit.
     requestForm.classList.add("d-none");
     information.classList.remove("d-none");
   }
